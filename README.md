@@ -66,3 +66,15 @@ Completion:
     Fuel runs out → forced landing scenario.
     
 Real-Time Updates: The GUI refreshes every 0.5 seconds, reflecting changes in altitude, airspeed, weather severity, etc.
+
+## CODE EXPLANATION 
+flight_decision_support.py is divided into:
+1: Global constants for placeholders (physics, distances).
+2: FlightState dataclass to store flight variables.
+3: AIDecisionSupport class for:
+      Building/training a minimal neural net (toy data).
+      Running the flight simulation logic (update alt, speed, fuel).
+      Checking conditions with a mix of NN output and rule-based weighting.
+      Presenting results via a Tkinter GUI in real-time.
+4: main() function for user input and launching the simulation.
+
