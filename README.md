@@ -1,84 +1,136 @@
-# AI-ENHANCED-FLIGHT-DECISION-SUPPORT-SEOUL-TOKYO-
-This is NOT SUPPOSE TO FLY AT ALL because the maximum flight distance of Cessna 172 is 1,185 km. But it's just a code to show the ai trying to find the best path, except for all that.
+AI-ENHANCED-FLIGHT-DECISION-SUPPORT-SEOUL-TOKYO
 
+This project is NOT designed for actual flight execution. A Cessna 172's maximum range is 1,185 km, making a 1,147 km Seoul-to-Tokyo flight highly impractical. However, this code simulates an AI-driven decision support system for pilot assistance, optimizing route planning and emergency response.
 
-# AI-Cessna-172
-## AI Decision Support: Seoul to Tokyo Flight Simulator
+AI-Cessna-172
 
-An advanced AI copilot simulating a **1,147 km** flight from Seoul to Tokyo in a **Cessna 172**, using **neural networks**, **real-time data**, a **GUI**, and **weight dynamics**.  
-**Note**: This is purely for demonstration – the actual maximum range of a typical Cessna 172 is around **1,185 km** – but this project illustrates AI-based pathfinding and safety checks.
+AI Decision Support: Seoul to Tokyo Flight Simulator
 
----
+This AI-powered copilot models real-time flight decision-making for a simulated journey from Seoul to Tokyo in a Cessna 172, integrating:
 
-## Key Features
+Neural Networks for risk prediction
 
-1. **Seoul-Tokyo Route**  
-   - Simulates a **1,147 km** flight distance, continuously tracked.
-   - Aviation constraints include a **1,185 km** approximate maximum range.
+Dynamic Flight Data Updates
 
-2. **Weight & CG Dynamics**  
-   - Adjusts performance based on pilot and cargo weights.
-   - Computes center of gravity (CG) for stability considerations.
+Tkinter GUI for real-time monitoring
 
-3. **Neural Network Inference**  
-   - Small **Keras** model classifies “critical” vs. “non-critical” states.
-   - Demonstrates how AI can augment pilot decision-making.
+Weight & CG Calculations for stability analysis
 
-4. **Real-Time Data**  
-   - Simulated ADS-B feed for altitude, wind, and engine variations.
-   - Updates occur every half second to mimic real-time conditions.
+Key Features
 
-5. **Pilot GUI**  
-   - **Tkinter** interface displays altitude, speed, fuel status, and AI recommendations.
-   - Shows top advisory messages (e.g., “Storm! Divert?” or “Low Fuel!”).
+1. Seoul-Tokyo Route
 
----
+Simulates a 1,147 km flight, tracking fuel, speed, and altitude.
 
-## Installation
+Constraints include a 1,185 km maximum range limitation.
 
-1. **Clone this repository**:
-   ```bash
-   git clone https://github.com/imnotwcked/AI-ENHANCED-FLIGHT-DECISION-SUPPORT-SEOUL-TOKYO-
-   cd AI-ENHANCED-FLIGHT-DECISION-SUPPORT-SEOUL-TOKYO-
-2. 2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
+2. Weight & CG Dynamics
 
-## Usage
+Adjusts aircraft performance based on pilot & cargo weight.
+
+Computes center of gravity (CG) for stability adjustments.
+
+3. Neural Network Inference
+
+A Keras model classifies flight states as "critical" or "non-critical."
+
+AI copilots provide real-time assistance based on environmental changes.
+
+4. Real-Time Data Simulation
+
+ADS-B-like data updates for altitude, wind, and fuel dynamics.
+
+The system processes changes every 0.5 seconds.
+
+5. Pilot GUI
+
+Tkinter interface displays real-time flight status and AI recommendations.
+
+Alerts for stall warnings, low fuel, and adverse weather conditions.
+
+Installation
+
+1. Clone this repository:
+
+ git clone https://github.com/imnotwcked/AI-ENHANCED-FLIGHT-DECISION-SUPPORT-SEOUL-TOKYO-
+ cd AI-ENHANCED-FLIGHT-DECISION-SUPPORT-SEOUL-TOKYO-
+
+2. Install dependencies:
+
+ pip install -r requirements.txt
+
+Usage
 
 1. Run the simulation:
-   ```bash
-   python ai_decision_support.py
-   
-2. Provide weight details (example):
-    Pilot weight (lbs): 145
-    Cargo weight (lbs): 50
-   
-3. Watch the GUI
-    The flight updates every half second.
-    Recommendations appear for issues like low fuel, near-stall speed, or severe weather.
 
-## Experimental Results
-Flight Duration: ~5 hours at ~230 km/h (depending on final speed/fuel usage).
+ python ai_decision_support.py
 
-Completion:
-    Tokyo reached (~5,000 simulation steps), or
-    Fuel runs out → forced landing scenario.
-    
-Real-Time Updates: The GUI refreshes every 0.5 seconds, reflecting changes in altitude, airspeed, weather severity, etc.
+2. Input flight parameters:
 
-## CODE EXPLANATION 
+Example:
+
+ Pilot weight (lbs): 145
+ Cargo weight (lbs): 50
+
+3. Observe the AI in action:
+
+The GUI updates every 0.5 seconds.
+
+AI recommendations appear for low fuel, turbulence, or high RPMs.
+
+Experimental Results
+
+Flight Duration: ~5 hours at 230 km/h cruise speed.
+
+Simulation Completion:
+
+Successful landing in Tokyo (~5,000 steps), OR
+
+Fuel depletion & forced landing
+
+Real-Time Updates: Altitude, speed, fuel, and weather conditions refresh dynamically.
+
+Code Explanation
+
 flight_decision_support.py is divided into:
 
-1: **Global constants for placeholders (physics, distances).**
+1. Global Constants
 
-2: **FlightState dataclass to store flight variables.**
+Placeholder values for physics, distances (e.g., AIR_DENSITY, FUEL_BURN_RATE, etc.)
 
-3: **AIDecisionSupport class for**:
-   -Building/training a minimal neural net (toy data).
-   -Running the flight simulation logic (update alt, speed, fuel).
-   -Checking conditions with a mix of NN output and rule-based weighting.
-   -Presenting results via a Tkinter GUI in real-time.
-      
-4: main() function for user input and launching the simulation.
+2. FlightState Dataclass
+
+Stores key flight variables like altitude, airspeed, fuel, weather severity, and distance remaining.
+
+3. AIDecisionSupport Class
+
+Builds/Trains a Neural Network (toy dataset) for “critical vs. non-critical” flight conditions.
+
+Runs Flight Simulation Logic: Periodically updates altitude, speed, fuel consumption, and weather conditions.
+
+Condition Checks: AI copilots analyze risk factors and suggestive actions.
+
+Tkinter GUI: Displays real-time flight parameters and AI-driven recommendations.
+
+4. main() Function
+
+User Input: Prompts pilot & cargo weight.
+
+AI Execution: Instantiates AIDecisionSupport and starts the simulation loop.
+
+License
+
+MIT LicenseCopyright (c) 2025 [Your Name]
+
+Permission is granted to use, modify, and distribute the software under the MIT License. See LICENSE for full details.
+
+Contributing
+
+Pull requests and suggestions are welcome! Please submit issues if you find any bugs or potential improvements.
+
+Disclaimer
+
+This is a conceptual AI-driven pilot assistant, not a real-world aviation safety system. Do not use this in actual flight scenarios.
+
+✈️ Happy Simulating! 🚀
 
