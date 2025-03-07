@@ -38,8 +38,8 @@ An advanced AI copilot simulating a **1,147 km** flight from Seoul to Tokyo in a
 
 1. **Clone this repository**:
    ```bash
-   git clone https://github.com/yourusername/ai-cessna-172.git
-   cd ai-cessna-172
+   git clone https://github.com/imnotwcked/AI-ENHANCED-FLIGHT-DECISION-SUPPORT-SEOUL-TOKYO-
+   cd AI-ENHANCED-FLIGHT-DECISION-SUPPORT-SEOUL-TOKYO-
 2. 2. Install dependencies:
    ```bash
    pip install -r requirements.txt
