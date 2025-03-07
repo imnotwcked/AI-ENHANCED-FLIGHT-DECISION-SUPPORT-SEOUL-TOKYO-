@@ -69,4 +69,22 @@ Completion:
     
 Real-Time Updates: The GUI refreshes every 0.5 seconds
 
+## CODE EXPLANATION
 
+`flight_decision_support.py` is divided into:
+
+1. **Global Constants**  
+   - Placeholder values for physics, distances (e.g., `AIR_DENSITY`, `FUEL_BURN_RATE`, etc.)
+
+2. **`FlightState` Dataclass**  
+   - Stores key flight variables like altitude, airspeed, fuel, weather severity, and distance remaining.
+
+3. **`AIDecisionSupport` Class**  
+   - **Builds/Trains a Minimal Neural Network** (toy data) for “critical vs. non-critical” classification.  
+   - **Runs Flight Simulation Logic**: Periodically updates altitude, speed, fuel usage, and weather conditions.  
+   - **Condition Checks**: Combines neural network output with a rule-based weighting system to generate recommendations.  
+   - **Tkinter GUI**: Displays real-time flight parameters and AI suggestions.
+
+4. **`main()` Function**  
+   - Prompts the user for pilot/cargo weight.  
+   - Instantiates `AIDecisionSupport` and runs the simulation loop.  
